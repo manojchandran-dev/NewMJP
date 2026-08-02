@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chromium-cli --help)",
+      "Bash(npx eslint *)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(curl -s \"http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__04kpziu._.css\")",
+      "Bash(powershell -Command \"Stop-Process -Id 16276 -Force -ErrorAction SilentlyContinue\")"
+    ]
+  }
+}
