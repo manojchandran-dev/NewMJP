@@ -10,7 +10,15 @@ const SPECS = [
   { label: "Pack Size", value: "12 Pieces" },
   { label: "Fabric", value: "Soft Cotton Blend" },
   { label: "Fit", value: "Regular & Comfortable" },
-  { label: "Colors", value: "Multicolor (may vary)" },
+  { label: "Colors", value: "5 Shades Available" },
+];
+
+const COLORS = [
+  { label: "Yellow", swatchClass: "bg-yellow-400" },
+  { label: "Pink", swatchClass: "bg-pink-400" },
+  { label: "Light Blue", swatchClass: "bg-sky-300" },
+  { label: "Green", swatchClass: "bg-emerald-500" },
+  { label: "Red", swatchClass: "bg-red-600" },
 ];
 
 const SIZE_GUIDE = [
@@ -23,7 +31,10 @@ const SIZE_GUIDE = [
 export function ProductSection() {
   return (
     <section id="product" className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-      <h2 className="text-center text-xl font-bold text-blue-950 sm:text-2xl md:text-3xl">
+      <span className="mx-auto block w-fit rounded-full bg-blue-950/5 px-4 py-1 text-center text-xs font-bold tracking-wide text-blue-950/60 uppercase">
+        Product Specifications
+      </span>
+      <h2 className="mt-3 text-center text-xl font-bold text-blue-950 sm:text-2xl md:text-3xl">
         Kids Inner Shorts &ndash; Boys &amp; Girls
       </h2>
       <p className="mt-1 text-center text-xs text-blue-900/50 sm:text-sm">
@@ -33,16 +44,35 @@ export function ProductSection() {
       <div className="mt-6 rounded-3xl border border-white/60 bg-white/70 p-5 shadow-xl shadow-blue-900/5 backdrop-blur sm:p-8">
         <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
           <div className="flex h-full flex-col justify-between gap-6">
-            <ul className="space-y-3 text-sm text-blue-950 sm:text-base">
+            <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
               {SPECS.map((spec) => (
-                <li key={spec.label} className="flex items-start gap-2">
-                  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-linear-to-br from-sky-400 to-emerald-400" />
-                  <span>
-                    <span className="font-semibold">{spec.label}:</span> {spec.value}
+                <li
+                  key={spec.label}
+                  className="rounded-xl border border-blue-900/10 bg-white/80 px-3 py-2.5"
+                >
+                  <span className="block text-[11px] font-semibold tracking-wide text-blue-900/50 uppercase">
+                    {spec.label}
+                  </span>
+                  <span className="text-sm font-semibold text-blue-950 sm:text-base">
+                    {spec.value}
                   </span>
                 </li>
               ))}
             </ul>
+
+            <div className="rounded-xl border border-blue-900/10 bg-white/80 px-3 py-2.5">
+              <span className="block text-[11px] font-semibold tracking-wide text-blue-900/50 uppercase">
+                Available Colors
+              </span>
+              <div className="mt-2 flex flex-wrap gap-3">
+                {COLORS.map((color) => (
+                  <span key={color.label} className="flex items-center gap-1.5" title={color.label}>
+                    <span className={`h-4 w-4 rounded-full ring-1 ring-blue-900/10 ${color.swatchClass}`} />
+                    <span className="text-xs font-medium text-blue-900/60">{color.label}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
 
             <a
               href={sizeImage.src}
@@ -54,7 +84,7 @@ export function ProductSection() {
                 <div className="h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-blue-900/10 bg-white">
                   <Image
                     src={sizeImage}
-                    alt="Size chart thumbnail"
+                    alt="MJP.Tex kids inner shorts size chart showing S, M, L, XL measurements"
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -68,7 +98,11 @@ export function ProductSection() {
           </div>
 
           <div className="mx-auto flex h-full w-full max-w-sm flex-col items-center justify-between gap-3">
-            <div className="h-56 w-full sm:h-64">
+            <div
+              className="h-56 w-full sm:h-64"
+              role="img"
+              aria-label="3D preview of MJP.Tex kids inner shorts fabric, drag to rotate"
+            >
               <ProductShowcase3D textureUrl={clothImage.src} aspect={clothImage.width / clothImage.height} />
             </div>
             <MeeshoButton size="lg" />
