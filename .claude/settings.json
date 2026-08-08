@@ -5,7 +5,12 @@
       "Bash(npx eslint *)",
       "Bash(curl -s http://localhost:3000/)",
       "Bash(curl -s \"http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__04kpziu._.css\")",
-      "Bash(powershell -Command \"Stop-Process -Id 16276 -Force -ErrorAction SilentlyContinue\")"
+      "Bash(powershell -Command \"Stop-Process -Id 16276 -Force -ErrorAction SilentlyContinue\")",
+      "Bash(cp \"d:/Manoj/Projects/Personal/Projects/mjp/src/assets/logo.png\" \"d:/Manoj/Projects/Personal/Projects/mjp/src/app/icon.png\")",
+      "Bash(identify \"d:/Manoj/Projects/Personal/Projects/mjp/src/app/icon.png\")"
+    ],
+    "additionalDirectories": [
+      "d:\\Manoj\\Projects\\Personal\\Projects\\mjp\\src\\assets"
     ]
   }
 }
