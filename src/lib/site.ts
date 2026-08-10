@@ -31,6 +31,7 @@ export const BUSINESS = {
   },
   mapEmbedSrc:
     "https://www.google.com/maps?q=Tiruppur,+Tamil+Nadu&output=embed",
+  instagramUrl: "https://www.instagram.com/mjptex",
 } as const;
 
 export const NAV_LINKS = [

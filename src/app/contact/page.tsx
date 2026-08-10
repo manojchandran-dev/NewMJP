@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon } from "@/components/icons";
+import { PhoneIcon, MailIcon, MapPinIcon, ClockIcon, InstagramIcon } from "@/components/icons";
 import { SITE_URL, BUSINESS } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -47,6 +47,13 @@ const CONTACT_ITEMS = [
     href: undefined,
     ringClass: "bg-violet-100 text-violet-700",
   },
+  {
+    Icon: InstagramIcon,
+    label: "Instagram",
+    value: "@mjptex",
+    href: BUSINESS.instagramUrl,
+    ringClass: "bg-rose-100 text-rose-700",
+  },
 ];
 
 export default function ContactPage() {
@@ -79,7 +86,12 @@ export default function ContactPage() {
                       {label}
                     </span>
                     {href ? (
-                      <a href={href} className="text-sm font-semibold text-blue-950 sm:text-base">
+                      <a
+                        href={href}
+                        target={href.startsWith("http") ? "_blank" : undefined}
+                        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                        className="text-sm font-semibold text-blue-950 sm:text-base"
+                      >
                         {value}
                       </a>
                     ) : (
