@@ -6,6 +6,7 @@ import { TopBar } from "@/components/TopBar";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
+import { MEESHO_URL } from "@/components/MeeshoButton";
 import { BUSINESS, SITE_NAME, SITE_URL } from "@/lib/site";
 
 const geistSans = Geist({
@@ -99,7 +100,7 @@ const localBusinessJsonLd = {
     closes: BUSINESS.openingHours.closes,
   },
   areaServed: "IN",
-  sameAs: ["https://www.meesho.com/MJPTex?_ms=3.0.1"],
+  sameAs: [MEESHO_URL, BUSINESS.instagramUrl],
 };
 
 export default function RootLayout({

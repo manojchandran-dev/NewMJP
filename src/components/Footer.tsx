@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
-import { WhatsAppIcon, MailIcon, PhoneIcon } from "./icons";
+import { WhatsAppIcon, MailIcon, PhoneIcon, InstagramIcon } from "./icons";
 import { NAV_LINKS, BUSINESS } from "@/lib/site";
 
 export function Footer() {
@@ -37,6 +37,15 @@ export function Footer() {
               className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
             >
               <PhoneIcon className="h-4 w-4" />
+            </a>
+            <a
+              href={BUSINESS.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="MJP.Tex on Instagram"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
+            >
+              <InstagramIcon className="h-4 w-4" />
             </a>
           </div>
         </div>
