@@ -21,12 +21,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "MJP.Tex — Kids Bottom Wear Manufacturer in Tiruppur, Tamil Nadu",
+    default: "MJP.Tex – Kids Innerwear & Bottom Wear | Tiruppur",
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "MJP.Tex manufactures kids inner shorts and everyday bottom wear for boys & girls (age 1–12) from Tiruppur, Tamil Nadu. Soft, breathable, skin-friendly cotton blend. Retail on Meesho, bulk orders welcome.",
+    "MJP.Tex is a kids innerwear and bottom wear manufacturer from Tiruppur, Tamil Nadu. Explore quality kids inner shorts and innerwear for boys & girls, age 1–12.",
   keywords: [
+    "MJP.Tex",
     "kids inner shorts manufacturer",
     "kids bottom wear manufacturer",
     "kids shorts manufacturer in Tamil Nadu",
@@ -43,15 +44,15 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "MJP.Tex — Kids Bottom Wear Manufacturer in Tiruppur, Tamil Nadu",
+    title: "MJP.Tex – Kids Innerwear & Bottom Wear | Tiruppur",
     description:
-      "Kids inner shorts & everyday bottom wear for boys & girls, age 1–12. Manufactured in Tiruppur with 15+ years of experience.",
+      "MJP.Tex is a kids innerwear and bottom wear manufacturer from Tiruppur, Tamil Nadu. Explore quality kids inner shorts and innerwear for boys & girls, age 1–12.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MJP.Tex — Kids Bottom Wear Manufacturer in Tiruppur, Tamil Nadu",
+    title: "MJP.Tex – Kids Innerwear & Bottom Wear | Tiruppur",
     description:
-      "Kids inner shorts & everyday bottom wear for boys & girls, age 1–12. Manufactured in Tiruppur with 15+ years of experience.",
+      "MJP.Tex is a kids innerwear and bottom wear manufacturer from Tiruppur, Tamil Nadu. Explore quality kids inner shorts and innerwear for boys & girls, age 1–12.",
   },
   robots: {
     index: true,
@@ -62,6 +63,14 @@ export const metadata: Metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  alternateName: "MJP Tex",
+  url: SITE_URL,
 };
 
 const localBusinessJsonLd = {
@@ -101,6 +110,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="font-sans bg-white text-slate-800">
+        <JsonLd data={websiteJsonLd} />
         <JsonLd data={localBusinessJsonLd} />
         <div className="relative min-h-screen">
           <BackgroundDecor />
