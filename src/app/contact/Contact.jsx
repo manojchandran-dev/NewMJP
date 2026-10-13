@@ -1,5 +1,6 @@
+'use client'
 import { useState } from 'react'
-import { MaskHeadline, Eyebrow, WHATSAPP, PHONE, EMAIL, HOURS } from '../components'
+import { MaskHeadline, Eyebrow, WHATSAPP, PHONE, EMAIL, HOURS } from '../../components'
 
 const ALL_SIZES = ['S', 'M', 'L', 'XL']
 const TYPES = ['Retailer', 'Wholesaler', 'Distributor']

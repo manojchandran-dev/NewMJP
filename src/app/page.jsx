@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { MaskHeadline, Eyebrow, Shorts, Clouds, Stars, SHADES, MEESHO, WHATSAPP, btnDark, btnLight } from '../components'
 
 const balloons = [
@@ -104,13 +104,13 @@ export default function Home() {
       {/* COLLECTION */}
       <section className="px-5 pb-32">
         <div className="mx-auto grid max-w-[1200px] gap-5 md:grid-cols-2">
-          <Link to="/products" className="lift reveal flex min-h-[300px] flex-col gap-3.5 rounded-3xl bg-butter p-11">
+          <Link href="/products" className="lift reveal flex min-h-[300px] flex-col gap-3.5 rounded-3xl bg-butter p-11">
             <Eyebrow className="text-ink">THE PRODUCT</Eyebrow>
             <h3 className="text-[34px] font-extrabold tracking-tight">Kids Inner Shorts</h3>
             <p className="max-w-[420px] text-[16.5px] leading-relaxed text-sub">Sizes S to XL, five shades, packs of 12. Full specifications and size guide.</p>
             <span className="mt-auto font-bold">View specifications →</span>
           </Link>
-          <Link to="/about" className="lift reveal flex min-h-[300px] flex-col gap-3.5 rounded-3xl bg-sage p-11">
+          <Link href="/about" className="lift reveal flex min-h-[300px] flex-col gap-3.5 rounded-3xl bg-sage p-11">
             <Eyebrow className="text-ink">OUR STORY</Eyebrow>
             <h3 className="text-[34px] font-extrabold tracking-tight">15+ years in Tiruppur</h3>
             <p className="max-w-[420px] text-[16.5px] leading-relaxed text-sub">Built in one of India’s largest knitwear hubs, on one simple mission.</p>

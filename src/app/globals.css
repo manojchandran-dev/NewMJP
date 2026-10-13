@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+/* --font-jakarta is set by next/font in layout.jsx */
+@theme inline {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
 
+@theme {
   --color-ink: #14213D;
   --color-muted: #4A5675;
   --color-sub: #3B4663;

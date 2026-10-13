@@ -1,21 +1,23 @@
-# MJP.Tex — website (React + Tailwind CSS)
+# MJP.Tex — website (Next.js + Tailwind CSS)
 
-Vite + React 19 + Tailwind CSS v4 + React Router.
+Next.js 16 (App Router) + React 19 + Tailwind CSS v4.
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173
-npm run build    # production files in dist/
+npm run dev      # http://localhost:3000
+npm run build    # production build in .next/
+npm start        # serve the production build
 ```
 
 ## Structure
-- `src/index.css` — Tailwind import, brand colours (`@theme`), all keyframe animations
-- `src/components.jsx` — header, footer, shorts illustration, clouds, stars, shared links
-- `src/pages/` — Home, Products, About, Contact
-- `src/main.jsx` — routes
+- `src/app/layout.jsx` — page shell: font, metadata, header, footer
+- `src/app/page.jsx` — Home; `src/app/{products,about,contact}/` — the other pages
+- `src/app/globals.css` — Tailwind import, brand colours (`@theme`), all keyframe animations
+- `src/app/icon.svg` — favicon
+- `src/components.jsx` — footer, logo, shorts illustration, clouds, stars, shared links
+- `src/Header.jsx` — header and nav (client component: highlights the current page)
 
 Contact details, WhatsApp and Meesho links live at the top of `src/components.jsx`.
 
 ## Deploying
-It's a single-page app, so the host must send every route to `index.html`
-(Vercel does this automatically for Vite; on Netlify add a `_redirects` file with `/* /index.html 200`).
+Deploy to Vercel as-is. Every page is pre-rendered as static HTML.

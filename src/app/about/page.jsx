@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import { MaskHeadline, Eyebrow, Clouds, Pin, WHATSAPP, btnDark } from '../components'
+import Link from 'next/link'
+import { MaskHeadline, Eyebrow, Clouds, Pin, WHATSAPP, btnDark } from '../../components'
 
 const pillars = [
   {
@@ -113,7 +113,7 @@ export default function About() {
             <h2 className="max-w-[600px] text-[36px] font-extrabold tracking-tight">Ready to stock MJP.Tex in your store?</h2>
             <div className="flex flex-wrap gap-3">
               <a href={WHATSAPP} className={btnDark}>Chat on WhatsApp</a>
-              <Link to="/products" className="inline-flex items-center rounded-xl bg-white px-7 py-4 font-bold transition hover:-translate-y-0.5">See products</Link>
+              <Link href="/products" className="inline-flex items-center rounded-xl bg-white px-7 py-4 font-bold transition hover:-translate-y-0.5">See products</Link>
             </div>
           </div>
         </div>

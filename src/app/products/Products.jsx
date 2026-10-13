@@ -1,5 +1,6 @@
+'use client'
 import { useState } from 'react'
-import { MaskHeadline, Eyebrow, Shorts, SHADES, MEESHO, WHATSAPP, btnDark, btnLight } from '../components'
+import { MaskHeadline, Eyebrow, Shorts, SHADES, MEESHO, WHATSAPP, btnDark, btnLight } from '../../components'
 
 const SIZES = [['S', 18, 20], ['M', 19, 23], ['L', 20, 26], ['XL', 23, 31]]
 

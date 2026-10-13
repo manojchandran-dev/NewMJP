@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom'
+import Link from 'next/link'
 
 export const MEESHO = 'https://www.meesho.com/MJPTex?_ms=3.0.1'
 export const WHATSAPP = 'https://wa.me/916380699014'
@@ -17,38 +17,13 @@ export const SHADES = [
 export const btnDark = 'inline-flex items-center rounded-xl bg-ink px-7 py-4 font-bold text-white transition hover:-translate-y-0.5'
 export const btnLight = 'inline-flex items-center rounded-xl border border-edge bg-white px-7 py-4 font-bold text-ink transition hover:-translate-y-0.5'
 
-const navLinks = [['/', 'Home'], ['/products', 'Products'], ['/about', 'About'], ['/contact', 'Contact']]
+export const navLinks = [['/', 'Home'], ['/products', 'Products'], ['/about', 'About'], ['/contact', 'Contact']]
 
 export function Logo({ dark }) {
   return (
     <span className={`text-[23px] font-extrabold tracking-tight ${dark ? 'text-white' : 'text-ink'}`}>
       MJP<span className={dark ? 'text-sun' : 'text-coral'}>.</span>Tex
     </span>
-  )
-}
-
-export function Header({ tint }) {
-  return (
-    <header className={tint}>
-      <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-5 p-5">
-        <Link to="/" aria-label="MJP.Tex home"><Logo /></Link>
-        <nav className="hidden gap-8 md:flex">
-          {navLinks.map(([to, label]) => (
-            <NavLink key={to} to={to} end
-              className={({ isActive }) => `relative py-1.5 text-[15px] font-semibold after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:origin-left after:bg-ink after:transition-transform after:duration-300 hover:after:scale-x-100 ${isActive ? 'after:scale-x-100' : 'after:scale-x-0'}`}>
-              {label}
-            </NavLink>
-          ))}
-        </nav>
-        <a href={MEESHO} className="rounded-[10px] bg-ink px-5 py-3 text-[15px] font-bold text-white transition hover:-translate-y-0.5">Buy on Meesho</a>
-      </div>
-      {/* mobile nav */}
-      <nav className="flex justify-center gap-6 pb-4 text-sm font-semibold md:hidden">
-        {navLinks.map(([to, label]) => (
-          <NavLink key={to} to={to} end className={({ isActive }) => (isActive ? 'underline underline-offset-4' : '')}>{label}</NavLink>
-        ))}
-      </nav>
-    </header>
   )
 }
 
@@ -63,7 +38,7 @@ export function Footer() {
         </div>
         <div className="flex flex-col gap-2.5">
           <div className="font-bold text-white">Company</div>
-          {navLinks.slice(1).map(([to, label]) => <Link key={to} to={to} className={a}>{label}</Link>)}
+          {navLinks.slice(1).map(([to, label]) => <Link key={to} href={to} className={a}>{label}</Link>)}
           <a href="https://www.instagram.com/mjptex" className={a}>Instagram</a>
         </div>
         <div className="flex flex-col gap-2.5">
